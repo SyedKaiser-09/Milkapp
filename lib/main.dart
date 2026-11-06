@@ -20,7 +20,7 @@ class MilkApp extends StatelessWidget {
   Widget build(BuildContext context) => ValueListenableBuilder<int>(
         valueListenable: paletteIndex,
         builder: (_, i, __) => MaterialApp(
-          title: 'Milk App',
+          title: 'MahaNanda Dairy',
           theme: themeFor(palettes[i]),
           home: StreamBuilder<User?>(
             stream: FirebaseAuth.instance.authStateChanges(),
@@ -115,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
               Image.asset('assets/images/logo.png', height: 72),
               const SizedBox(height: 4),
-              Text('Milk Delivery', style: Theme.of(context).textTheme.titleLarge),
+              Text('MahaNanda Dairy', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600)),
               const SizedBox(height: 16),
               if (vid == null) ...[
                 TextField(

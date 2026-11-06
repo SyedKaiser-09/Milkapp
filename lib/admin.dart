@@ -64,7 +64,7 @@ class TodayTab extends StatelessWidget {
           final planned = docs.fold<double>(0, (t, d) => t + (d['qty'] as num));
           final out = docs.fold<double>(0, (t, d) => t + (d['deliveredQty'] as num));
           return ListView(children: [
-            bannerImage(height: 110, title: 'Today'),
+            bannerImage(height: 110, title: 'MahaNanda Dairy'),
             Card(
               margin: const EdgeInsets.all(12),
               child: Padding(

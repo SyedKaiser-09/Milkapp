@@ -20,7 +20,7 @@ class _CustomerHomeState extends State<CustomerHome> {
     final pq = db.collection('payments').where('customerPhone', isEqualTo: widget.phone).where('month', isEqualTo: m);
     final cq = db.collection('customers').where('phone', isEqualTo: widget.phone).limit(1);
     return Scaffold(
-      appBar: appBar(context, 'My Milk', actions: topActions()),
+      appBar: appBar(context, 'MahaNanda Dairy', actions: topActions()),
       body: StreamBuilder<QuerySnapshot>(
         stream: dq.snapshots(),
         builder: (c, ds) => StreamBuilder<QuerySnapshot>(
@@ -36,7 +36,7 @@ class _CustomerHomeState extends State<CustomerHome> {
               final paid = ps.data!.docs.fold<double>(0, (s, d) => s + (d['amount'] as num));
               final bal = cs.data!.docs.isEmpty ? 0 : (cs.data!.docs.first['balance'] as num);
               return ListView(children: [
-                bannerImage(height: 120, title: 'My Milk'),
+                bannerImage(height: 120, title: 'My Milk Deliveries'),
                 Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                   IconButton(icon: const Icon(Icons.chevron_left), onPressed: () => setState(() => month = DateTime(month.year, month.month - 1))),
                   Text(DateFormat('MMMM yyyy').format(month), style: Theme.of(c).textTheme.titleLarge),
